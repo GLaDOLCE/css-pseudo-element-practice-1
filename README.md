@@ -17,7 +17,7 @@
 一周分為四部分，每部分初速不同(使用animation-timing-function預設有的ease-in & ease-out，自訂斜率可用cubic-bezier算)
 
 
-ease-in、ease-out其實不太準，出來的運動軌跡不會是標準圓形，之後有空會再微調一下animation-timing-function
+ease-in、ease-out其實不太準，出來的運動軌跡不會是標準圓形，之後有空會再微調一下cubic-bezier函數
 
 
 最後結合xy軸就完成圓周運動惹
