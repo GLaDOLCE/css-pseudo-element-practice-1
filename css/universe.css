@@ -1,0 +1,457 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body{
+    background: black;
+}
+
+#google_loading>div{
+    float: left;
+    left:50px;
+    width:50px;
+    height:100px;
+    border-radius:0 50px 50px 0;
+    position:absolute;
+    z-index:10;
+    perspective:200px;
+    transform:rotateY(0deg);
+    animation:bgColor1 4s linear infinite both,rotate 4s infinite both;
+    transform-origin:0 50%;
+}
+
+@-webkit-keyframes bgColor1{
+    0%  {background: #ffd539;}
+    50% {background: #3a71f8;}
+    100% {background: #3a71f8;}
+}
+@-webkit-keyframes rotate{
+    0%{
+        -webkit-transform:rotate(0deg);
+    }
+    25%{
+        -webkit-transform:rotate(90deg);
+    }
+    50%{
+        -webkit-transform:rotate(180deg);
+    }
+    75%{
+        -webkit-transform:rotate(270deg);
+    }
+    100%{
+        -webkit-transform:rotate(0deg);
+    }
+}
+#google_loading>div:after{
+    content:'';
+    position:absolute;
+    z-index:10;
+    top:0;
+    left:-50px;
+    width:50px;
+    height:100px;
+    border-radius:50px 0 0 50px;
+    background:#ccc;
+    animation:bgColor2 4s linear infinite both;
+}
+@-webkit-keyframes bgColor2{
+    0%  {background: #f52d27;}
+    25% {background: #00b262;}
+    75% {background: #f52d27;}
+    100% {background: #f52d27;}
+}
+#google_loading>div:before{
+    content:'';
+    position:absolute;
+    z-index:11;
+    top:0;
+    left:0px;
+    width:50px;
+    height:100px;
+    border-radius:0 50px 50px 0;
+    transform-origin:0 50%;
+    transform:rotateY(0deg) rotateZ(0deg);
+    animation:flipColor 4s linear infinite both,flip 4s linear infinite both;
+}
+@-webkit-keyframes flip{
+    0%    {-webkit-transform:rotateY(0deg);}
+    12.5% {-webkit-transform:rotateY(90deg);}
+    25%   {-webkit-transform:rotateY(180deg);}
+    37.5% {-webkit-transform:rotateY(90deg);}
+    50%   {-webkit-transform:rotateY(0deg);}
+    62.5% {-webkit-transform:rotateY(90deg);}
+    75%   {-webkit-transform:rotateY(180deg);}
+    87.5% {-webkit-transform:rotateY(90deg);}
+    100%  {-webkit-transform:rotateY(0deg);}
+}
+@-webkit-keyframes flipColor{
+    0%    {background: #f52d27;}
+    12.5% {background: #7d0906;}
+    25%   {background: #ffd539;}
+    37.5% {background: #9f7d00;}
+    50%   {background: #00b262;}
+    62.5% {background: #00190e;}
+    75%   {background: #3a71f8;}
+    87.5% {background: #052e94;}
+    100%  {background: #f52d27;}
+}
+.box1{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    animation-name: box1x;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.box1::after {
+    content: '';
+    animation: 5s infinite box1y;
+    position: absolute;
+    background: red;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+@-webkit-keyframes box1x{
+    0%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    25%{
+        left: 600px;
+        animation-timing-function: ease-in;
+    }
+    50%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    75%{
+        left: 0px;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+}
+@-webkit-keyframes box1y{
+    0%{
+        top: 0px;
+        background: red;
+        animation-timing-function: ease-in;
+    }
+    25%{
+        top: 300px;
+        background: orange;
+        animation-timing-function: ease-out;
+    }
+    50%{
+        top: 600px;
+        background: yellow;
+        animation-timing-function: ease-in;
+    }
+    75%{
+        top: 300px;
+        background: orange;
+        animation-timing-function: ease-out;
+    }
+    100%{
+        top: 0px;
+        background: red;
+        animation-timing-function: ease-in;
+    }
+}
+.box2{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    animation-name: box2x;
+    animation-duration: 4s;
+    animation-delay: -2s;
+    animation-iteration-count: infinite;
+}
+.box2::after {
+    content: '';
+    animation: 4s infinite box2y;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    animation-delay: -2s;
+    border-radius: 15px;
+}
+@-webkit-keyframes box2x{
+    0%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    25%{
+        left: 500px;
+        animation-timing-function: ease-in;
+    }
+    50%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    75%{
+        left: 100px;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+}
+@-webkit-keyframes box2y{
+    0%{
+        top: 100px;
+        background: #33FF33;
+        animation-timing-function: ease-in;
+    }
+    25%{
+        top: 300px;
+        background: #33FFAA;
+        animation-timing-function: ease-out;
+    }
+    50%{
+        top: 500px;
+        background: #33FFDD;
+        animation-timing-function: ease-in;
+    }
+    75%{
+        top: 300px;
+        background: #33FFAA;
+        animation-timing-function: ease-out;
+    }
+    100%{
+        top: 100px;
+        background: #33FF33;
+        animation-timing-function: ease-in;
+    }
+}
+.box3{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    animation-name: box3x;
+    animation-duration: 6s;
+    animation-delay: -1s;
+    animation-iteration-count: infinite;
+}
+.box3::after {
+    content: '';
+    animation: 6s infinite box3y;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    animation-delay: -1s;
+    border-radius: 15px;
+}
+@-webkit-keyframes box3x{
+    0%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    25%{
+        left: 450px;
+        animation-timing-function: ease-in;
+    }
+    50%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    75%{
+        left: 150px;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+}
+@-webkit-keyframes box3y{
+    0%{
+        top: 150px;
+        background: #00BBFF;
+        animation-timing-function: ease-in;
+    }
+    25%{
+        top: 300px;
+        background: #33CCFF;
+        animation-timing-function: ease-out;
+    }
+    50%{
+        top: 450px;
+        background: #77DDFF;
+        animation-timing-function: ease-in;
+    }
+    75%{
+        top: 300px;
+        background: #33CCFF;
+        animation-timing-function: ease-out;
+    }
+    100%{
+        top: 150px;
+        background: #00BBFF;
+        animation-timing-function: ease-in;
+    }
+}
+.box4{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    animation-name: box4x;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+.box4::after {
+    content: '';
+    animation: 3s infinite box4y;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+@-webkit-keyframes box4x{
+    0%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    25%{
+        left: 400px;
+        animation-timing-function: ease-in;
+    }
+    50%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+    75%{
+        left: 200px;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        left: 300px;
+        animation-timing-function: ease-out;
+    }
+}
+@-webkit-keyframes box4y{
+    0%{
+        top: 200px;
+        background: #5555FF;
+        animation-timing-function: ease-in;
+    }
+    25%{
+        top: 300px;
+        background: #9F88FF;
+        animation-timing-function: ease-out;
+    }
+    50%{
+        top: 400px;
+        background: #D1BBFF;
+        animation-timing-function: ease-in;
+    }
+    75%{
+        top: 300px;
+        background: #9F88FF;
+        animation-timing-function: ease-out;
+    }
+    100%{
+        top: 200px;
+        background: #5555FF;
+        animation-timing-function: ease-in;
+    }
+}
+.circle1{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 599px;
+    height: 599px;
+    border-radius: 50%;
+    border: solid 1px 	#AAAAAA;
+    z-index: 1;
+}
+.circle2{
+    position: absolute;
+    left: 110px;
+    top: 110px;
+    width: 399px;
+    height: 399px;
+    border-radius: 50%;
+    border: solid 1px 	#AAAAAA;
+    z-index: 1;
+}
+.circle3{
+    position: absolute;
+    left: 210px;
+    top: 210px;
+    width: 199px;
+    height: 199px;
+    border-radius: 50%;
+    border: solid 1px 	#AAAAAA;
+    z-index: 1;
+}
+.circle4{
+    position: absolute;
+    left: 160px;
+    top: 160px;
+    width: 299px;
+    height: 299px;
+    border-radius: 50%;
+    border: solid 1px 	#AAAAAA;
+    z-index: 1;
+}
+.box1,.box1::after,.box2,.box2::after,.box3,.box3::after,.box4,.box4::after{
+    z-index: 2;
+}
+.center{
+    position: absolute;
+    left: 280px;
+    top: 280px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: 3s infinite center1 linear;
+}
+@-webkit-keyframes center1{
+    0%{
+        background: white;
+    }
+    25%{
+        background: #DDDDDD;
+    }
+    50%{
+        background: #AAAAAA;
+    }
+    75%{
+        background: #DDDDDD;
+    }
+    100%{
+        background: white;
+    }
+}
