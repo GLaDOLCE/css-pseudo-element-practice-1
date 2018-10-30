@@ -14,7 +14,10 @@
 將x軸與y軸的動作分開寫(::before & ::after)
 
 
-一周分為四部分，每部分初速不同(使用animation-timing-function預設有的ease-in & ease-out，自訂斜率可用cubic-bezier算)
+一周分為四部分，每部分初速不同(自訂速度曲線可用cubic-bezier調整)
+
+
+參考：http://cubic-bezier.com
 
 
 ease-in、ease-out其實不太準，出來的運動軌跡不會是標準圓形，之後有空會再微調一下cubic-bezier函數
